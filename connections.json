@@ -2,6 +2,36 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "2017.09.01.0",
   "parameters": {
+    "authorizationKey": {
+      "type": "string",
+      "metadata": {
+        "description": "The authorizationKey."
+      }
+    },
+    "connectionType": {
+      "type": "string",
+      "allowedValues": [
+        "ExpressRoute",
+        "IPsec",
+        "VPNClient",
+        "Vnet2Vnet"
+      ],
+      "metadata": {
+        "description": "Gateway connection type. Possible values are: 'Ipsec','Vnet2Vnet','ExpressRoute', and 'VPNClient."
+      }
+    },
+    "enableBgp": {
+      "type": "bool",
+      "metadata": {
+        "description": "EnableBgp flag"
+      }
+    },
+    "ipsecPolicies": {
+      "type": "array",
+      "metadata": {
+        "description": "The IPSec Policies to be considered by this connection."
+      }
+    }
   },
   "variables": {
   },
