@@ -103,9 +103,23 @@
     }
   },
   "variables": {
+    "ipsecPolicy": {
+      "dhGroup": "[parameters('dhGroup')]",
+      "ikeEncryption": "[parameters('ikeEncryption')]",
+      "ikeIntegrity": "[parameters('ikeIntegrity')]",
+      "ipsecEncryption": "[parameters('ipsecEncryption')]",
+      "ipsecIntegrity": "[parameters('ipsecIntegrity')]",
+      "pfsGroup": "[parameters('pfsGroup')]",
+      "saDataSizeKilobytes": "[parameters('saDataSizeKilobytes')]",
+      "saLifeTimeSeconds":"[parameters('saLifeTimeSeconds')]"
+    }
   },
   "resources": [
   ],
   "outputs": {
+    "ipsecPolicy": {
+      "type": "object",
+      "value": "[variables('ipsecPolicy')]"
+    }
   }
 }
