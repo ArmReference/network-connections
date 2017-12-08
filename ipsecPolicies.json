@@ -1,12 +1,111 @@
 ﻿{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "2017.09.01.0",
+  "parameters": {
+    "dhGroup": {
+      "type": "string",
+      "allowedValues": [
+        "DHGroup1",
+        "DHGroup14",
+        "DHGroup2",
+        "DHGroup2048",
+        "DHGroup24",
+        "ECP256",
+        "ECP384",
+        "None"
+      ],
+      "metadata": {
+        "description": "The DH Groups used in IKE Phase 1 for initial SA."
+      }
     },
-    "variables": {
+    "ikeEncryption": {
+      "type": "string",
+      "allowedValues": [
+        "AES128",
+        "AES192",
+        "AES256",
+        "DES",
+        "DES3"
+      ],
+      "metadata": {
+        "description": "The IKE encryption algorithm (IKE phase 2)."
+      }
     },
-    "resources": [
-    ],
-    "outputs": {
+    "ikeIntegrity": {
+      "type": "string",
+      "allowedValues": [
+        "MD5",
+        "SHA1",
+        "SHA256",
+        "SHA384"
+      ],
+      "metadata": {
+        "description": "The IKE integrity algorithm (IKE phase 2)."
+      }
+    },
+    "ipsecEncryption": {
+      "type": "string",
+      "allowedValues": [
+        "AES128",
+        "AES192",
+        "AES256",
+        "DES",
+        "DES3",
+        "GCMAES128",
+        "GCMAES192",
+        "GCMAES256",
+        "None"
+      ],
+      "metadata": {
+        "description": "The IPSec encryption algorithm (IKE phase 1)."
+      }
+    },
+    "ipsecIntegrity": {
+      "type": "string",
+      "allowedValues": [
+        "GCMAES128",
+        "GCMAES192",
+        "GCMAES256",
+        "MD5",
+        "SHA1",
+        "SHA256"
+      ],
+      "metadata": {
+        "description": "The IPSec integrity algorithm (IKE phase 1)."
+      }
+    },
+    "pfsGroup": {
+      "type": "string",
+      "allowedValues": [
+        "ECP256",
+        "ECP384",
+        "None",
+        "PFS1",
+        "PFS2",
+        "PFS2048",
+        "PFS24"
+      ],
+      "metadata": {
+        "description": "The DH Groups used in IKE Phase 2 for new child SA."
+      }
+    },
+    "saDataSizeKilobytes": {
+      "type": "int",
+      "metadata": {
+        "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for a site to site VPN tunnel."
+      }
+    },
+    "saLifeTimeSeconds": {
+      "type": "int",
+      "metadata": {
+        "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for a site to site VPN tunnel."
+      }
     }
+  },
+  "variables": {
+  },
+  "resources": [
+  ],
+  "outputs": {
+  }
 }
