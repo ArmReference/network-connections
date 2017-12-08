@@ -31,6 +31,49 @@
       "metadata": {
         "description": "The IPSec Policies to be considered by this connection."
       }
+    },
+    "localNetworkGateway2": {
+      "type": "string",
+      "metadata": {
+        "description": "The reference to local network gateway resource."
+      }
+    },
+    "peer": {
+      "type": "string",
+      "defaultValue": null,
+      "metadata": {
+        "description": "The reference to peerings resource."
+      }
+    },
+    "routingWeight": {
+      "type": "int",
+      "metadata": {
+        "description": "The routing weight."
+      }
+    },
+    "sharedKey": {
+      "type": "string",
+      "metadata": {
+        "description": "The IPSec shared key."
+      }
+    },
+    "usePolicyBasedTrafficSelectors": {
+      "type": "bool",
+      "metadata": {
+        "description": "Enable policy-based traffic selectors."
+      }
+    },
+    "virtualNetworkGateway1": {
+      "type": "string",
+      "metadata": {
+        "description": "The reference to virtual network gateway resource."
+      }
+    },
+    "virtualNetworkGateway2": {
+      "type": "string",
+      "metadata": {
+        "description": "The reference to virtual network gateway resource."
+      }
     }
   },
   "variables": {
