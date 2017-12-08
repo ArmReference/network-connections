@@ -103,6 +103,9 @@
     }
   },
   "variables": {
+    "comments": {
+      "definition": "https://docs.microsoft.com/en-us/rest/api/network-gateway/virtualnetworkgatewayconnections/createorupdate#definitions_ipsecpolicy"
+    },
     "ipsecPolicy": {
       "dhGroup": "[parameters('dhGroup')]",
       "ikeEncryption": "[parameters('ikeEncryption')]",
@@ -111,7 +114,7 @@
       "ipsecIntegrity": "[parameters('ipsecIntegrity')]",
       "pfsGroup": "[parameters('pfsGroup')]",
       "saDataSizeKilobytes": "[parameters('saDataSizeKilobytes')]",
-      "saLifeTimeSeconds":"[parameters('saLifeTimeSeconds')]"
+      "saLifeTimeSeconds": "[parameters('saLifeTimeSeconds')]"
     }
   },
   "resources": [
