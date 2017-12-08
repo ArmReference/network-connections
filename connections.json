@@ -38,6 +38,12 @@
         "description": "The reference to local network gateway resource."
       }
     },
+    "name": {
+      "type": "string",
+      "metadata": {
+        "description": "Resource name."
+      }
+    },
     "peer": {
       "type": "string",
       "defaultValue": null,
@@ -77,9 +83,26 @@
     }
   },
   "variables": {
-  },
-  "resources": [
-  ],
-  "outputs": {
+    "connection": {
+      "apiVersion": "2015-06-15",
+      "name": "[parameters('name')]",
+      "type": "Microsoft.Network/connections",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [],
+      "properties": {
+        "virtualNetworkGateway1": {
+          "id": "[parameters('virtualNetworkGateway1')]"
+        },
+        "localNetworkGateway2": {
+          "id": "[parameters('localNetworkGateway2')]"
+        },
+        "connectionType": "[parameters('connectionType')]",
+        "routingWeight": "[parameters('routingWeight')]",
+        "sharedKey": "[parameters('sharedKey')]"
+      }
+    },
+    "resources": [
+    ],
+    "outputs": {
+    }
   }
-}
