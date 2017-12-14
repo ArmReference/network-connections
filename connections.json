@@ -88,7 +88,7 @@
       "name": "[parameters('name')]",
       "type": "Microsoft.Network/connections",
       "location": "[resourceGroup().location]",
-      "dependsOn": [],
+      "dependsOn": [ ],
       "properties": {
         "virtualNetworkGateway1": {
           "id": "[parameters('virtualNetworkGateway1')]"
@@ -100,9 +100,10 @@
         "routingWeight": "[parameters('routingWeight')]",
         "sharedKey": "[parameters('sharedKey')]"
       }
-    },
-    "resources": [
-    ],
-    "outputs": {
     }
+  },
+  "resources": [
+  ],
+  "outputs": {
   }
+}
