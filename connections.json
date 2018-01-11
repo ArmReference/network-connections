@@ -105,5 +105,9 @@
   "resources": [
   ],
   "outputs": {
+    "connections": {
+      "type": "object",
+      "value": "[variables('connection')]"
+    }
   }
 }
